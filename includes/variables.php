@@ -7,3 +7,4 @@ $myproducts = [
   ["Bonnet arc-en-ciel", 15, "€","","Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida.","bonnet 4.jpeg"]
 ]
 ?>
+
