@@ -1,11 +1,12 @@
 <?php
 require_once "includes/header.php";
 ?>
-<table>
-  <?php
-  foreach ($myproducts as $value) {
 
-  ?>
+<?php
+foreach ($myproducts as $value) {
+
+?>
+  <table>
     <tr>
       <?php
       for ($i = 0; $i <= 4; $i++) {
@@ -23,16 +24,15 @@ require_once "includes/header.php";
           } else {
             echo $value[$i];
           }
-
           ?>
         </td>
       <?php } ?>
     </tr>
 
   <?php  } ?>
-</table>
+  </table>
 
 
-<?php
-require_once "includes/footer.php";
-?>
+  <?php
+  require_once "includes/footer.php";
+  ?>
