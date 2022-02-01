@@ -45,6 +45,9 @@ require_once "includes/fonctions.php";
                             <li class="nav-item">
                                 <a href="post.php"><button type="button" class="btn btn-dark ml-5"><?= $_SESSION["username"]; ?></a>
                             </li>
+                            <li class="nav-item">
+                                <a href="logout.php"><button type="button" class="btn btn-dark ml-5">Déconnexion</a>
+                            </li>
                         <?php
                         } else {
                         ?>
@@ -85,6 +88,15 @@ require_once "includes/fonctions.php";
     ?>
         <div class="alert alert-success" role="alert">
             Vous êtes connecté
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (isset($_GET["logout"]) && $_GET["logout"] == "success") {
+    ?>
+        <div class="alert alert-success" role="alert">
+            Vous êtes bien déconnecté
         </div>
     <?php
     }
