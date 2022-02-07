@@ -2,11 +2,37 @@
 
 $pageTitle = "Connexion";
 
+
 require_once "includes/header.php";
 
-if (isset($_POST["username"])) {
-    $_SESSION["username"] = $_POST["username"];
-    header("Location: index.php?login=success");
+
+$loginErrors = [];
+$defaultPassword = "toto";
+
+
+if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $password = $_POST["password"];
+
+    if (empty($password)) {
+        $loginErrors[] = "Veuillez saisir un mot de passe";
+    } elseif ($password != $defaultPassword) {
+        $loginErrors[] = "Mot de passe incorrecte";
+    }
+
+    if (empty($loginErrors)) {
+        $_SESSION["login"] = $_POST["login"];
+        header("Location: index.php?loginSuccess=1");
+    }
+    foreach ($loginErrors as $loginError) {
+?>
+        <div class="alert alert-danger" role="alert">
+            <?= $loginError; ?>
+        </div>
+    <?php
+    }
+    ?>
+
+<?php
 }
 
 ?>
@@ -30,7 +56,14 @@ if (isset($_POST["username"])) {
         </form>
     </div>
 </div>
+<?php
+if (isset($_GET["loginSucces"]) && $_GET["loginSucces"] == 1) {
+?>
+    <div class="alert alert-success" role="alert">
+        Vous êtes bien connecté
+    </div>
 
 <?php
+}
 require_once "includes/footer.php";
 ?>

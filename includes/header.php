@@ -84,7 +84,7 @@ require_once "includes/fonctions.php";
 
 <body>
     <?php
-    if (isset($_GET["login"]) && $_GET["login"] == "success") {
+    if (isset($_GET["loginSuccess"]) && $_GET["loginSuccess"] == 1) {
     ?>
         <div class="alert alert-success" role="alert">
             Vous êtes connecté
@@ -95,9 +95,10 @@ require_once "includes/fonctions.php";
     <?php
     if (isset($_GET["logout"]) && $_GET["logout"] == "success") {
     ?>
-        <div class="alert alert-success" role="alert">
-            Vous êtes bien déconnecté
-        </div>
+
     <?php
     }
+    ?>
+
+    <?php
     ?>
